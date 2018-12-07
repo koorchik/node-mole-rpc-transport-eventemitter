@@ -4,7 +4,7 @@
   "description": "Event Emitter transport for Mole-RPC (JSON-RPC library)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./tests/autotests.js || exit 1"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter/issues"
   },
-  "homepage": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter#readme"
+  "homepage": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter#readme",
+  "devDependencies": {
+    "mole-rpc": "0.0.4"
+  }
 }
