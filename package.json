@@ -1,6 +1,6 @@
 {
   "name": "mole-rpc-transport-eventemitter",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "Event Emitter transport for Mole-RPC (JSON-RPC library)",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "url": "git+https://github.com/koorchik/node-mole-rpc-transport-eventemitter.git"
   },
   "peerDependencies": {
-    "mole-rpc": "^0.0.5"
+    "mole-rpc": "^0.2.2"
+  },
+  "devDependencies": {
+    "mole-rpc": "^0.2.2"
   },
   "keywords": [
     "jsonrpc",
@@ -33,8 +36,5 @@
   "bugs": {
     "url": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter/issues"
   },
-  "homepage": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter#readme",
-  "devDependencies": {
-    "mole-rpc": "0.0.4"
-  }
+  "homepage": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter#readme"
 }
