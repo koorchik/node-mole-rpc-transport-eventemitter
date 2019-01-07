@@ -1,4 +1,5 @@
 const MoleClient = require('mole-rpc/MoleClient');
+const MoleClientProxified = require('mole-rpc/MoleClientProxified');
 const MoleServer = require('mole-rpc/MoleServer');
 const AutoTester = require('mole-rpc/AutoTester');
 
@@ -11,9 +12,14 @@ async function main() {
     const emitter = new EventEmitter();
 
     const server = await prepareServer(emitter);
-    const [client1, client2] = await prepareClients(emitter);
+    const clients = await prepareClients(emitter);
 
-    const autoTester = new AutoTester({server, client1, client2});
+    const autoTester = new AutoTester({
+        server, 
+        simpleClient: clients.simpleClient, 
+        proxifiedClient: clients.proxifiedClient
+    });
+
     await autoTester.runAllTests();
 }
 
@@ -35,7 +41,8 @@ async function prepareServer(emitter) {
 }
 
 async function prepareClients(emitter) {
-    const client1 = new MoleClient({
+    const simpleClient = new MoleClient({
+        requestTimeout: 1000, // autotester expects this value
         transport: new TransportClient({
             emitter,
             inTopic: 'toClient1',
@@ -43,7 +50,8 @@ async function prepareClients(emitter) {
         }),
     });
 
-    const client2 = new MoleClient({
+    const proxifiedClient = new MoleClientProxified({
+        requestTimeout: 1000, // autotester expects this value
         transport: new TransportClient({
             emitter,
             inTopic: 'toClient2',
@@ -51,7 +59,7 @@ async function prepareClients(emitter) {
         }),
     });
 
-   return [client1, client2];
+   return {simpleClient, proxifiedClient};
 }
 
 main().then(console.log, console.error);
