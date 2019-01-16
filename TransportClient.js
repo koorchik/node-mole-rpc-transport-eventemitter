@@ -1,16 +1,15 @@
 class EventEmitterTransportClient {
-    constructor({emitter, inTopic, outTopic}) {
-        this.emitter  = emitter;
-        this.inTopic  = inTopic;
+    constructor({ emitter, inTopic, outTopic }) {
+        this.emitter = emitter;
+        this.inTopic = inTopic;
         this.outTopic = outTopic;
     }
 
-    onMessage(callback) {
-        this.onMessageCallback = callback;
-        this.emitter.on(this.inTopic, this.onMessageCallback);
+    onResponse(callback) {
+        this.emitter.on(this.inTopic, callback);
     }
 
-    async send(data) {
+    async sendRequest(data) {
         return this.emitter.emit(this.outTopic, data);
     }
 }

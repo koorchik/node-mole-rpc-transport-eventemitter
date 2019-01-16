@@ -15,8 +15,8 @@ async function main() {
     const clients = await prepareClients(emitter);
 
     const autoTester = new AutoTester({
-        server, 
-        simpleClient: clients.simpleClient, 
+        server,
+        simpleClient: clients.simpleClient,
         proxifiedClient: clients.proxifiedClient
     });
 
@@ -35,8 +35,8 @@ async function prepareServer(emitter) {
                 emitter,
                 inTopic: 'fromClient2',
                 outTopic: 'toClient2'
-            }),
-        ],
+            })
+        ]
     });
 }
 
@@ -47,7 +47,7 @@ async function prepareClients(emitter) {
             emitter,
             inTopic: 'toClient1',
             outTopic: 'fromClient1'
-        }),
+        })
     });
 
     const proxifiedClient = new MoleClientProxified({
@@ -56,10 +56,10 @@ async function prepareClients(emitter) {
             emitter,
             inTopic: 'toClient2',
             outTopic: 'fromClient2'
-        }),
+        })
     });
 
-   return {simpleClient, proxifiedClient};
+    return { simpleClient, proxifiedClient };
 }
 
 main().then(console.log, console.error);
