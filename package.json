@@ -1,40 +1,40 @@
 {
-  "name": "mole-rpc-transport-eventemitter",
-  "version": "0.2.0",
-  "description": "Event Emitter transport for Mole-RPC (JSON-RPC library)",
-  "main": "index.js",
-  "scripts": {
-    "test": "node ./tests/autotests.js || exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/koorchik/node-mole-rpc-transport-eventemitter.git"
-  },
-  "peerDependencies": {
-    "mole-rpc": "^0.2.2"
-  },
-  "devDependencies": {
-    "mole-rpc": "^0.2.2"
-  },
-  "keywords": [
-    "jsonrpc",
-    "json-rpc",
-    "json",
-    "jsonrpc-2.0",
-    "rpc",
-    "http",
-    "tcp",
-    "mqtt",
-    "api",
-    "mole-rpc",
-    "mole",
-    "transport",
-    "mole-transport"
-  ],
-  "author": "koorchik",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter/issues"
-  },
-  "homepage": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter#readme"
+    "name": "mole-rpc-transport-eventemitter",
+    "version": "0.3.0",
+    "description": "Event Emitter transport for Mole-RPC (JSON-RPC library)",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./tests/autotests.js || exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/koorchik/node-mole-rpc-transport-eventemitter.git"
+    },
+    "peerDependencies": {
+        "mole-rpc": "^0.2.2"
+    },
+    "devDependencies": {
+        "mole-rpc": "^0.2.2"
+    },
+    "keywords": [
+        "jsonrpc",
+        "json-rpc",
+        "json",
+        "jsonrpc-2.0",
+        "rpc",
+        "http",
+        "tcp",
+        "mqtt",
+        "api",
+        "mole-rpc",
+        "mole",
+        "transport",
+        "mole-transport"
+    ],
+    "author": "koorchik",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter/issues"
+    },
+    "homepage": "https://github.com/koorchik/node-mole-rpc-transport-eventemitter#readme"
 }

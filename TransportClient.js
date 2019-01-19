@@ -5,11 +5,11 @@ class EventEmitterTransportClient {
         this.outTopic = outTopic;
     }
 
-    onResponse(callback) {
+    onData(callback) {
         this.emitter.on(this.inTopic, callback);
     }
 
-    async sendRequest(data) {
+    async sendData(data) {
         return this.emitter.emit(this.outTopic, data);
     }
 }

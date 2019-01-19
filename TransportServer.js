@@ -3,16 +3,12 @@ class EventEmitterTransportServer {
         this.emitter = emitter;
         this.inTopic = inTopic;
         this.outTopic = outTopic;
-        this.onRequestCallback = undefined;
+        this.onRequestCallback = () => {};
     }
 
-    onRequest(callback) {
-        this.onRequestCallback = callback;
-    }
-
-    run() {
+    onData(callback) {
         this.emitter.on(this.inTopic, async reqData => {
-            const respData = await this.onRequestCallback(reqData);
+            const respData = await callback(reqData);
             if (!respData) return; // no data means notification
 
             this.emitter.emit(this.outTopic, respData);
