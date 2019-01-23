@@ -1,5 +1,8 @@
-Event Emitter Transport for Mole RPC (JSON RPC Library) 
--------------------------------------------------------
+## Event Emitter Transport for Mole RPC (JSON RPC Library)
+
+[![npm version](https://badge.fury.io/js/mole-rpc-transport-eventemitter.svg)](https://badge.fury.io/js/mole-rpc-transport-eventemitter)
+[![Build Status](https://travis-ci.org/koorchik/node-mole-rpc-transport-eventemitter.svg?branch=master)](https://travis-ci.org/koorchik/node-mole-rpc-transport-eventemitter)
+[![Known Vulnerabilities](https://snyk.io/test/github/koorchik/node-mole-rpc-transport-eventemitter/badge.svg?targetFile=package.json)](https://snyk.io/test/github/koorchik/node-mole-rpc-transport-eventemitter?targetFile=package.json)
 
 ```javascript
 const MoleClient = require('mole-rpc/MoleClient');
@@ -28,19 +31,18 @@ async function runServer(emitter) {
                 emitter,
                 inTopic: 'fromClient2',
                 outTopic: 'toClient2'
-            }),
-        ],
+            })
+        ]
     });
-    
-    
+
     server.expose({
         getGreeting(name) {
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resolve(`Hi, ${name}`)
+                    resolve(`Hi, ${name}`);
                 }, 1000);
             });
-        } 
+        }
     });
 }
 
@@ -50,7 +52,7 @@ async function runClients(emitter) {
             emitter,
             inTopic: 'toClient1',
             outTopic: 'fromClient1'
-        }),
+        })
     });
 
     const client2 = new MoleClient({
@@ -58,18 +60,12 @@ async function runClients(emitter) {
             emitter,
             inTopic: 'toClient2',
             outTopic: 'fromClient2'
-        }),
+        })
     });
 
-    console.log(
-        'FROM CLIENT 1',
-        await client1.callMethod('getGreeting', 'User1')
-    );
+    console.log('FROM CLIENT 1', await client1.callMethod('getGreeting', 'User1'));
 
-    console.log(
-        'FROM CLIENT 2',
-        await client2.callMethod('getGreeting', 'User2')
-    );
+    console.log('FROM CLIENT 2', await client2.callMethod('getGreeting', 'User2'));
 }
 
 main();
