@@ -4,6 +4,8 @@
 [![Build Status](https://travis-ci.org/koorchik/node-mole-rpc-transport-eventemitter.svg?branch=master)](https://travis-ci.org/koorchik/node-mole-rpc-transport-eventemitter)
 [![Known Vulnerabilities](https://snyk.io/test/github/koorchik/node-mole-rpc-transport-eventemitter/badge.svg?targetFile=package.json)](https://snyk.io/test/github/koorchik/node-mole-rpc-transport-eventemitter?targetFile=package.json)
 
+## Usage example
+
 ```javascript
 const MoleClient = require('mole-rpc/MoleClient');
 const MoleServer = require('mole-rpc/MoleServer');
