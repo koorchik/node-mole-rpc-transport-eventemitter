@@ -11,13 +11,14 @@
         "url": "git+https://github.com/koorchik/node-mole-rpc-transport-eventemitter.git"
     },
     "engines": {
-        "node": ">=8.2.0"
+        "node": ">=10.0.0"
     },
     "peerDependencies": {
         "mole-rpc": "^0.3.0"
     },
     "devDependencies": {
-        "mole-rpc": "^0.3.0"
+        "mole-rpc": "^0.3.0",
+        "mole-rpc-autotester": "^0.3.5"
     },
     "keywords": [
         "jsonrpc",
