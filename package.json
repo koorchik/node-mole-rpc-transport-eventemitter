@@ -1,6 +1,6 @@
 {
     "name": "mole-rpc-transport-eventemitter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Event Emitter transport for Mole-RPC (JSON-RPC library)",
     "main": "index.js",
     "scripts": {
